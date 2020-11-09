@@ -1,3 +1,5 @@
+@max-width-mobile: ~"max-width: 480px";
+
 *{
 	box-sizing: border-box;
  }
@@ -7,37 +9,39 @@ body{
 	font-size: 14px;
 }
 
-header{
+header {
 	background-color: #333;
 	height: 3em;
 	color: #FFF;
 	margin-bottom: 1em;
+
+	h1{
+		font-size: 2em;
+		display:inline-block;
+		vertical-align:	middle;
+	}
+
+	h2{
+		font-size: 2em;
+		display:inline-block;
+		vertical-align:	middle;
+	}
+
+	.container:before{
+		content: '';
+		display:inline-block;
+		height: 100%;
+		vertical-align:	middle;
+	}
 }
 
-header h1{
-	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
-}
-header h2{
-	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
-}
-
-header .container:before{
-	content: '';
-	display:inline-block;
-	height: 100%;
-	vertical-align:	middle;
-}
 
 .container{
 	width: 60%;
 	height: 100%;
 	margin: 0 auto;
 
-	@media (max-width: 480px) {
+	@media (@max-width-mobile) {
 		width: 90%;
 		margin: 0 auto;
 	}
@@ -46,15 +50,15 @@ header .container:before{
 section{
 	margin: 2em 0;
 	overflow: hidden;
-}
 
-section h2{
-	font-size: 3em;
-	display: block;
-	padding-bottom: .5em;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: .5em;
-	margin-top: 30px;
+	h2{
+		font-size: 3em;
+		display: block;
+		padding-bottom: .5em;
+		border-bottom: 1px solid #ccc;
+		margin-bottom: .5em;
+		margin-top: 30px;
+	}
 }
 
 table{
@@ -62,7 +66,7 @@ table{
 	margin-bottom : .5em;
     table-layout: fixed;
 
- 	@media (max-width: 480px) {
+ 	@media (@max-width-mobile) {
 	    display: block;
 	    overflow-x: auto;
 	    white-space: nowrap;
@@ -88,7 +92,7 @@ label{
 }
 
 #buscar-pacientes {
-	@media (max-width: 480px) {
+	@media (@max-width-mobile) {
 		width: 100%;
 	}
 }
@@ -112,7 +116,7 @@ label{
 	display: inline-block;
 	padding: 10px 0px;
 	
-	@media (max-width: 480px) {
+	@media (@max-width-mobile) {
 		width: 100%;
 	}
 }
@@ -133,11 +137,10 @@ button{
     clear: both;
     margin: 10px 0px;
 
-}
-
-button:active{
-	margin-top:0px;
-	border: 0;
+    &:active {
+    	margin-top:0px;
+		border: 0;
+    }
 }
 
 button[disabled=disabled], button:disabled {
@@ -149,7 +152,7 @@ button[disabled=disabled], button:disabled {
 #adicionar-paciente{
     margin-top: 30px;
 
-    @media (max-width: 480px) {
+    @media (@max-width-mobile) {
     	width: 100%;
     }
 }
@@ -176,7 +179,7 @@ button[disabled=disabled], button:disabled {
 	height: 35px;
 	margin-bottom: 10px;
 
-	@media (max-width: 480px) {
+	@media (@max-width-mobile) {
 		width: 100%;
 	}
 }
